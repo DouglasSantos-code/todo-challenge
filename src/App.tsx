@@ -13,8 +13,15 @@ const App = () => {
   ]);
 
   function handleAddNewTask(taskName: string) {
-    let newTask = [...list, { id: list.length + 1, name: taskName, done: false }];
-    setList(newTask);
+    const createNewTask = [...list, { id: list.length + 1, name: taskName, done: false }];
+    setList(createNewTask);
+  }
+
+  function handleDeleteTask(id: number) {
+    const taskWithoutDeletedOne = list.filter((task) => {
+      return task.id !== id;
+    });
+    setList(taskWithoutDeletedOne);
   }
 
   return (
@@ -27,7 +34,7 @@ const App = () => {
       {/* Tasks criadas e tasks concluidas */}
 
       {list.map((item, index) => (
-        <ListItems key={index} item={item}></ListItems>
+        <ListItems key={index} item={item} onClick={handleDeleteTask}></ListItems>
       ))}
     </>
   );

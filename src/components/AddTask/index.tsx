@@ -9,7 +9,7 @@ type Props = {
 export const AddTask = ({ onClick }: Props) => {
   const [inputText, setInputText] = useState('');
 
-  function handleAddTask() {
+  function handleAddNewTask() {
     onClick(inputText);
     setInputText('');
   }
@@ -22,7 +22,7 @@ export const AddTask = ({ onClick }: Props) => {
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       />
-      <C.AddTask onClick={handleAddTask}>
+      <C.AddTask onClick={handleAddNewTask}>
         <span>Criar</span>
         <PlusCircle size={20} />
       </C.AddTask>
