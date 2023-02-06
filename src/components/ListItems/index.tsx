@@ -1,15 +1,19 @@
-import { useState } from "react";
-import * as C from "./styles";
-import { Item } from "../../types/item";
-import { Trash } from "phosphor-react";
+import { useState } from 'react';
+import * as C from './styles';
+import { Item } from '../../types/item';
+import { Trash } from 'phosphor-react';
 
 type Props = {
   item: Item;
+  onClick: (id: number) => void;
 };
 
-export const ListItems = ({ item }: Props) => {
+export const ListItems = ({ item, onClick }: Props) => {
   const [isChecked, setIsChecked] = useState(item.done);
 
+  function onDelete() {
+    onClick(item.id);
+  }
   return (
     <C.Box>
       <C.Input done={isChecked}>
@@ -21,7 +25,7 @@ export const ListItems = ({ item }: Props) => {
         />
         <label htmlFor="checkboxTask">{item.name}</label>
       </C.Input>
-      <C.Delete>
+      <C.Delete onClick={onDelete}>
         <Trash size={20} />
       </C.Delete>
     </C.Box>
