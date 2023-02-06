@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Header = styled.header`
   background-color: #0d0d0d;
   color: #4ea8de;
-  height: 200px;
+  height: 160px;
   width: 100%;
   margin: auto;
   display: flex;

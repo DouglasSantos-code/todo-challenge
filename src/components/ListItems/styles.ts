@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Box = styled.div`
   background-color: #262626;
@@ -11,17 +11,30 @@ export const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  div:first-child {
-    margin-left: 16px;
-    label {
-      margin-left: 12px;
-    }
-  }
 `;
+
+type ContainerProps = {
+  done: boolean;
+};
+export const Input = styled.div(
+  ({ done }: ContainerProps) => `
+
+  margin-left: 16px;
+  label {
+    margin-left: 12px;
+    color: ${done ? '#808080' : '#F2F2F2'};
+    text-decoration: ${done ? 'line-through' : 'initial'};
+  }
+`
+);
 
 export const Delete = styled.div`
   color: #808080;
   cursor: pointer;
   margin-right: 22px;
+
+  :hover {
+    color: #f2f2f2;
+    transition: 0.2s;
+  }
 `;

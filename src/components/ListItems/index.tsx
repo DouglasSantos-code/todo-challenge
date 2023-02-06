@@ -8,12 +8,19 @@ type Props = {
 };
 
 export const ListItems = ({ item }: Props) => {
+  const [isChecked, setIsChecked] = useState(item.done);
+
   return (
     <C.Box>
-      <div>
-        <input type="checkbox" name="checkboxTask" />
+      <C.Input done={isChecked}>
+        <input
+          type="checkbox"
+          name="checkboxTask"
+          checked={isChecked}
+          onChange={(e) => setIsChecked(e.target.checked)}
+        />
         <label htmlFor="checkboxTask">{item.name}</label>
-      </div>
+      </C.Input>
       <C.Delete>
         <Trash size={20} />
       </C.Delete>
