@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { inputWithoutText } from '../../type';
 
 export const Container = styled.div`
   width: 736px;
@@ -25,7 +26,8 @@ export const Container = styled.div`
   }
 `;
 
-export const AddTask = styled.button`
+export const AddTask = styled.button(
+  ({ hasTask }: inputWithoutText) => `
   background-color: #1e6f9f;
   color: #f2f2f2;
   font-weight: bold;
@@ -37,9 +39,11 @@ export const AddTask = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  opacity: ${hasTask !== '' ? 1 : 0.6};
+  cursor: ${hasTask !== '' ? 'pointer' : 'not-allowed'};
 
   span {
     margin-right: 8px;
   }
-`;
+`
+);

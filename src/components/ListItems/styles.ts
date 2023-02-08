@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { TaskDone } from '../../type';
 
 export const Box = styled.div`
   background-color: #262626;
@@ -13,11 +14,8 @@ export const Box = styled.div`
   justify-content: space-between;
 `;
 
-type ContainerProps = {
-  done: boolean;
-};
 export const Input = styled.div(
-  ({ done }: ContainerProps) => `
+  ({ done }: TaskDone) => `
 
   margin-left: 16px;
   label {
