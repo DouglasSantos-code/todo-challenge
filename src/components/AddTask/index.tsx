@@ -1,18 +1,17 @@
-import * as C from './styles';
-import { PlusCircle } from 'phosphor-react';
 import { useState } from 'react';
+import { TaskAdd } from '../../type';
 
-type Props = {
-  onClick: (taskName: string) => void;
-};
+import { PlusCircle } from 'phosphor-react';
 
-export const AddTask = ({ onClick }: Props) => {
+import * as C from './styles';
+
+export const AddTask = ({ onClick }: TaskAdd) => {
   const [inputText, setInputText] = useState('');
 
   function handleAddNewTask() {
-    onClick(inputText);
-    setInputText('');
+    inputText !== '' && (onClick(inputText), setInputText(''));
   }
+
   return (
     <C.Container>
       <input
@@ -22,7 +21,7 @@ export const AddTask = ({ onClick }: Props) => {
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       />
-      <C.AddTask onClick={handleAddNewTask}>
+      <C.AddTask hasTask={inputText} onClick={handleAddNewTask}>
         <span>Criar</span>
         <PlusCircle size={20} />
       </C.AddTask>

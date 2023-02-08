@@ -1,14 +1,9 @@
 import { useState } from 'react';
-import * as C from './styles';
-import { Item } from '../../types/item';
+import { ContainerTaskItem } from '../../type';
 import { Trash } from 'phosphor-react';
+import * as C from './styles';
 
-type Props = {
-  item: Item;
-  onClick: (id: number) => void;
-};
-
-export const ListItems = ({ item, onClick }: Props) => {
+export const ListItems = ({ item, onClick }: ContainerTaskItem) => {
   const [isChecked, setIsChecked] = useState(item.done);
 
   function onDelete() {
