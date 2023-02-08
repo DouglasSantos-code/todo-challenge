@@ -3,20 +3,18 @@ import { ContainerTaskItem } from '../../type';
 import { Trash } from 'phosphor-react';
 import * as C from './styles';
 
-export const ListItems = ({ item, onClick }: ContainerTaskItem) => {
-  const [isChecked, setIsChecked] = useState(item.done);
-
+export const ListItems = ({ item, onClick, onChange }: ContainerTaskItem) => {
   function onDelete() {
     onClick(item.id);
   }
   return (
     <C.Box>
-      <C.Input done={isChecked}>
+      <C.Input isComplete={item.isComplete}>
         <input
           type="checkbox"
           name="checkboxTask"
-          checked={isChecked}
-          onChange={(e) => setIsChecked(e.target.checked)}
+          checked={item.isComplete}
+          onChange={(e) => onChange(item.id, e.target.checked)}
         />
         <label htmlFor="checkboxTask">{item.name}</label>
       </C.Input>

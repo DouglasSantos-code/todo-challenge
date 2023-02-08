@@ -1,7 +1,7 @@
 export type TaskItem = {
-  id: number;
+  id: string;
   name: string;
-  done: boolean;
+  isComplete: boolean;
 };
 
 export type TaskAdd = {
@@ -10,7 +10,8 @@ export type TaskAdd = {
 
 export type ContainerTaskItem = {
   item: TaskItem;
-  onClick: (id: number) => void;
+  onClick: (id: string) => void;
+  onChange: (id: string, isComplete: boolean) => void;
 };
 
 export type inputWithoutText = {
@@ -18,5 +19,5 @@ export type inputWithoutText = {
 };
 
 export type TaskDone = {
-  done: boolean;
+  isComplete: boolean;
 };
