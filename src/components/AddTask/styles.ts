@@ -5,23 +5,27 @@ export const Container = styled.div`
   width: 736px;
   height: 54px;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
   margin: -30px auto 80px auto;
+  display: flex;
   gap: 8px;
 
   input {
     background: #262626;
     border: 1px solid #0d0d0d;
-    border-radius: 16px;
+    border-radius: 8px;
     width: 638px;
     color: #fff;
     font-size: 16px;
+    padding-left: 16px;
 
     ::placeholder {
-      padding-left: 16px;
       font-size: 16px;
       color: #808080;
+    }
+
+    :focus-visible {
+      border: 1px solid hsl(237, 92%, 75%);
+      outline: none;
     }
   }
 `;

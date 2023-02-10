@@ -15,13 +15,13 @@ export const Box = styled.div`
 `;
 
 export const Input = styled.div(
-  ({ done }: TaskDone) => `
+  ({ isComplete }: TaskDone) => `
 
   margin-left: 16px;
   label {
     margin-left: 12px;
-    color: ${done ? '#808080' : '#F2F2F2'};
-    text-decoration: ${done ? 'line-through' : 'initial'};
+    color: ${isComplete ? '#808080' : '#F2F2F2'};
+    text-decoration: ${isComplete ? 'line-through' : 'initial'};
   }
 `
 );
