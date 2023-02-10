@@ -8,18 +8,19 @@ import * as C from './styles';
 export const AddTask = ({ onClick }: TaskAdd) => {
   const [inputText, setInputText] = useState('');
 
-  function handleAddNewTask() {
-    inputText !== '' && (onClick(inputText), setInputText(''));
-  }
+  const handleAddNewTask = () => {
+    inputText !== '' && onClick(inputText), setInputText('');
+  };
 
   return (
     <C.Container>
       <input
         type="text"
         name="addTask"
-        placeholder="Adicione uma nova task"
+        placeholder="Adicione uma nova task..."
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
+        autoComplete="off"
       />
       <C.AddTask hasTask={inputText} onClick={handleAddNewTask}>
         <span>Criar</span>

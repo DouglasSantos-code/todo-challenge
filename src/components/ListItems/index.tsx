@@ -4,9 +4,9 @@ import { Trash } from 'phosphor-react';
 import * as C from './styles';
 
 export const ListItems = ({ item, onClick, onChange }: ContainerTaskItem) => {
-  function onDelete() {
+  const onDelete = () => {
     onClick(item.id);
-  }
+  };
   return (
     <C.Box>
       <C.Input isComplete={item.isComplete}>
