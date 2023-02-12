@@ -1,35 +1,33 @@
-import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
-/* $gray-100: hsl(0, 0%, 95%);
-$gray-200: hsl(0, 0%, 85%);
-$gray-300: hsl(0, 0%, 50%);
-$gray-400: hsl(0, 0%, 20%);
-$gray-500: hsl(0, 0%, 15%);
-$gray-600: hsl(0, 0%, 10%);
-$gray-700: hsl(0, 0%, 5%);
+:root {
+  --gray-100: #f2f2f2;
+  --gray-200: #d9d9d9;
+  --gray-300: #808080;
+  --gray-400: #333333;
+  --gray-500: #262626;
+  --gray-600: #1a1a1a;
+  --gray-700: #0d0d0d;
+  --purple: #8284fa;
+  --purple-dark: #5e60ce;
+  --blue: #4ea8de;
+  --blue-dark: #1e6f9f;
+  --danger: #e25858;
 
-$purple: hsl(237, 92%, 75%);
-$purple-dark: hsl(239, 53%, 59%);
+  --ff-sans: "Inter", sans-serif;
 
-$blue: hsl(203, 69%, 59%);
-$blue-dark: hsl(202, 68%, 37%);
+  --fw-regular: 400;
+  --fw-bold: 700;
 
-$danger: hsl(0, 80%, 62%);
+  --fs-sm: 0.75rem;
+  --fs-md: 0.875rem;
+  --fs-base: 1rem;
 
-$ff-sans: "Inter", sans-serif;
-
-$fw-regular: 400;
-$fw-bold: 700;
-
-$fs-sm: 0.75rem;
-$fs-md: 0.875rem;
-$fs-base: 1rem;
-
-$br-1: 0.5rem;
-$br-full: 9999px; */
+  --br-1: 0.5rem;
+  --br-full: 9999px; 
+}
 
 *,
 *::before,
@@ -68,18 +66,18 @@ html:focus-within {
 body {
   color: #fff;
   background: #1A1A1A;
-  font-family: Open-Sans, Helvetica, Sans-Serif;
+  font-family: var(--ff-sans);
   text-rendering: optimizeSpeed;
   }
 
   @media only screen and (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: var(--fs-md);
   }
 }
 @media only screen and (max-width: 425px) {
   body {
-    font-size: 12px;
+    font-size: var(--fs-sm);
   }
 }
 
