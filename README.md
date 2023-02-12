@@ -30,3 +30,9 @@ Durante este desafio, utilizamos os conceitos básicos do React desenvolvendo do
   <img src="./src/assets/mobile-screenshot-1.png" width="35%">
   <img src="./src/assets/mobile-screenshot-2.png" width="35%">
 </p>
+
+<a href="https://www.figma.com/file/0n0zDN7zbzhRbaEO74Xesx/ToDo-List/duplicate" target="_blank">
+<img src="https://user-images.githubusercontent.com/71772559/178192253-4fe4757c-de57-4878-a38c-a483c25670b1.png" />
+</a>
+
+Feito com 💜 por [Douglas Santos](https://github.com/DouglasSantos-code)
