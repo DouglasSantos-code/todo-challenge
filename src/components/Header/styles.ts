@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  background-color: #0d0d0d;
-  color: #4ea8de;
+  background-color: var(--gray-700);
   height: 160px;
   width: 100%;
   margin: auto;
@@ -10,5 +9,5 @@ export const Container = styled.header`
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: var(--fw-bold);
 `;

@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  width: 736px;
+  max-width: 736px;
   justify-content: space-between;
   margin: auto;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
 `;
 
 export const TotalTask = styled.div`
@@ -15,23 +15,23 @@ export const TotalTask = styled.div`
   align-items: center;
 
   :nth-child(1) {
-    color: #4ea8de;
+    color: var(--blue);
   }
   :nth-child(2) {
-    color: #8284fa;
+    color: var(--purple);
   }
 
   div {
-    background-color: #333333;
+    background-color: var(--gray-400);
     height: 20px;
-    border-radius: 999px;
+    border-radius: var(--br-full);
     display: flex;
     align-items: center;
     justify-content: center;
 
     span {
       padding: 0 8px;
-      color: #d9d9d9;
+      color: var(--gray-200);
     }
   }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { inputWithoutText } from '../../type';
 
 export const Container = styled.div`
-  width: 736px;
+  max-width: 736px;
   height: 54px;
   margin: auto;
   margin: -30px auto 80px auto;
@@ -10,21 +10,20 @@ export const Container = styled.div`
   gap: 8px;
 
   input {
-    background: #262626;
-    border: 1px solid #0d0d0d;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-700);
     border-radius: 8px;
     width: 638px;
-    color: #fff;
-    font-size: 16px;
+    color: var(--gray-100);
+    font-size: var(--fs-base);
     padding-left: 16px;
 
     ::placeholder {
-      font-size: 16px;
-      color: #808080;
+      color: var(--gray-300);
     }
 
     :focus-visible {
-      border: 1px solid hsl(237, 92%, 75%);
+      border: 1px solid var(--purple-dark);
       outline: none;
     }
   }
@@ -32,14 +31,14 @@ export const Container = styled.div`
 
 export const AddTask = styled.button(
   ({ hasTask }: inputWithoutText) => `
-  background-color: #1e6f9f;
-  color: #f2f2f2;
-  font-weight: bold;
+  background-color: var(--blue-dark);
+  color: var(--gray-100);
+  font-weight: var(--fw-bold);
   border: none;
-  font-size: 14px;
+  font-size: var(--fs-md);
   width: 90px;
   height: 52px;
-  border-radius: 8px;
+  border-radius: var(--br-1);
   display: flex;
   align-items: center;
   justify-content: center;
