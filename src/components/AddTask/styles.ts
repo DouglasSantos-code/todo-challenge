@@ -1,13 +1,16 @@
-import styled from 'styled-components';
-import { inputWithoutText } from '../../type';
+import styled from "styled-components";
+import { inputWithoutText } from "../../type";
 
 export const Container = styled.div`
   max-width: 736px;
   height: 54px;
   margin: auto;
   margin: -30px auto 80px auto;
-  display: flex;
-  gap: 8px;
+
+  form {
+    display: flex;
+    gap: 8px;
+  }
 
   input {
     background: var(--gray-500);
@@ -42,8 +45,8 @@ export const AddTask = styled.button(
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: ${hasTask !== '' ? 1 : 0.6};
-  cursor: ${hasTask !== '' ? 'pointer' : 'not-allowed'};
+  opacity: ${hasTask !== "" ? 1 : 0.6};
+  cursor: ${hasTask !== "" ? "pointer" : "not-allowed"};
 
   span {
     margin-right: 8px;
