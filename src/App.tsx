@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
-import { TaskItem } from './type';
+import { useState, useEffect } from "react";
+import { TaskItem } from "./type";
 
-import { getLocalStorage } from './helpers/getTaskStorage';
+import { getLocalStorage } from "./helpers/getTaskStorage";
 
-import { AddTask } from './components/AddTask';
-import { AmountTask } from './components/AmountTask';
-import { Header } from './components/Header';
-import { ListItems } from './components/ListItems';
-import { WithoutTask } from './components/WithoutTask';
+import { AddTask } from "./components/AddTask";
+import { AmountTask } from "./components/AmountTask";
+import { Header } from "./components/Header";
+import { ListItems } from "./components/ListItems";
+import { WithoutTask } from "./components/WithoutTask";
 
-import { v4 as idTask } from 'uuid';
+import { v4 as idTask } from "uuid";
 
-import { GlobalStyle } from './App.style';
+import { GlobalStyle } from "./App.style";
 
 const App = () => {
   const [list, setList] = useState<TaskItem[]>(getLocalStorage());
@@ -20,7 +20,10 @@ const App = () => {
   let taskCompleteCount = list.filter((task) => task.isComplete).length;
 
   const handleAddNewTask = (taskName: string) => {
-    const createNewTask = [...list, { id: idTask(), name: taskName, isComplete: false }];
+    const createNewTask = [
+      { id: idTask(), name: taskName, isComplete: false },
+      ...list,
+    ];
     setList(createNewTask);
   };
 
@@ -42,7 +45,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(list));
+    localStorage.setItem("todos", JSON.stringify(list));
   }, [list]);
 
   return (
@@ -50,7 +53,10 @@ const App = () => {
       <GlobalStyle />
       <Header />
       <AddTask onClick={handleAddNewTask} />
-      <AmountTask calcTotalTask={taskCount} calcTotalTaskComplete={taskCompleteCount} />
+      <AmountTask
+        calcTotalTask={taskCount}
+        calcTotalTaskComplete={taskCompleteCount}
+      />
       {list.length < 1 && <WithoutTask />}
       {list.map((item, index) => (
         <ListItems

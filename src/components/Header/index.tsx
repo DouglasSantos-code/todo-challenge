@@ -1,5 +1,5 @@
-import * as C from './styles';
-import logoImg from '../../assets/logo.svg';
+import * as C from "./styles";
+import logoImg from "../../assets/logo.svg";
 
 export const Header = () => {
   return (

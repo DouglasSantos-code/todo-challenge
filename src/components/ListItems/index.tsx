@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { ContainerTaskItem } from '../../type';
-import { Trash } from 'phosphor-react';
-import * as C from './styles';
+import { ContainerTaskItem } from "../../type";
+import { Trash } from "phosphor-react";
+import * as C from "./styles";
+import { CheckIcon } from "@radix-ui/react-icons";
 
 export const ListItems = ({ item, onClick, onChange }: ContainerTaskItem) => {
   const onDelete = () => {
@@ -9,6 +9,10 @@ export const ListItems = ({ item, onClick, onChange }: ContainerTaskItem) => {
   };
   return (
     <C.Box>
+      <C.ContainerCheckbox isComplete={item.isComplete}>
+        {item.isComplete && <CheckIcon />}
+      </C.ContainerCheckbox>
+
       <C.Input isComplete={item.isComplete}>
         <input
           type="checkbox"
